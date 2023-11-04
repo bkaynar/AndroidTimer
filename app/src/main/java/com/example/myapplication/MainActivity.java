@@ -1,9 +1,12 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -27,7 +30,11 @@ public class MainActivity extends AppCompatActivity {
         editTextDakika = findViewById(R.id.sureGir); // EditText'i tanımladık
 
         txt_sayimi_goster.setText(formatSure(kalanSure));
-
+//EditText alanında enter a basıldığında butona basılmış gibi işlem yapılmasını sağlıyoruz
+        editTextDakika.setOnEditorActionListener((textView, i, keyEvent) -> {
+            btn_sayimi_baslat.performClick();
+            return false;
+        });
         btn_sayimi_baslat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
                     kalanSure = dakika * 60 * 1000; // Dakikayı milisaniyeye çeviriyoruz
                     baslatGeriSayim();
                 }
+                InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputMethodManager.hideSoftInputFromWindow(editTextDakika.getWindowToken(), 0);
             }
         });
 
