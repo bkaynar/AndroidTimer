@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/sureGir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Süre Giriniz(Dakika Olarak)" />
+    <TextView
+        android:id="@+id/sure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:text="asdasda"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        />
+
+    <Button
+
+        android:id="@+id/baslat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BAŞLAT / DEVAM ETTİR"
+        android:layout_below="@+id/sure"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"/>
+    <Button
+        android:id="@+id/duraklat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DURAKLAT"
+        android:layout_below="@+id/baslat"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+    <Button
+        android:id="@+id/durdurSifirla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DURDUR / SIFIRLA"
+        android:layout_below="@+id/duraklat"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+
+
+</LinearLayout>
